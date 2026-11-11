@@ -1,0 +1,26 @@
+model: [resnet18, swinv2_t]
+fold_num: 5
+fold_index: 1
+image_size: 224
+image_size_color: 256
+image_size_texture: 384
+epoch: 80
+learning_rate: 3.0e-4
+backbone_learning_rate: 1.0e-5
+batch_size: 16
+source: ../datasets/jade
+score_file_name: score.xlsx
+freeze_epochs: 15
+unfreeze_stages: 1
+sigma_warmup_epochs: 5
+logvar_min: -6.0
+logvar_max: 2.0
+boundary_weight: 0.05
+use_expert_variance: true
+expert_variance_weight: 0.5
+warmup_epochs: 5
+weight_decay: 0.05
+grad_clip: 1.0
+ema_decay: 0.999
+patience: 12
+seed: 7
